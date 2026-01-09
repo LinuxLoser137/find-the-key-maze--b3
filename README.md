@@ -1,20 +1,88 @@
-# Find the Key Maze
-
-## Beginner Game 3
-
 ## Step 1
+
+Create a variable to track if the player has the key
+``||variables:set hasKey to false||``
+```blocks
+let hasKey = false
+```
+## Step 2
+
+Set the background color
+``||scene:setBackgroundColor(7)||``
+```blocks
+scene.setBackgroundColor(7)
+```
+## Step 3
+
+Create a sprite and name it finder
+``||sprites:create(assets.image`finder`, SpriteKind.Player)||``
+```blocks
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+```
+## Step 4
+
+Create movement for the sprite
+``||controller:moveSprite(player3)||``
+```blocks
+controller.moveSprite(player3)
+```
+## Step 5
+
+Keep the player on the screen
+``||sprites:setFlag(SpriteFlag.StayInScreen, true)||``
+```blocks
+player3.setFlag(SpriteFlag.StayInScreen, true)
+```
+## Step 6
+
+Create a sprite called key
+``||sprites:create(assets.image`key`, SpriteKind.Food)||``
+```blocks
+let key = sprites.create(assets.image`key`, SpriteKind.Food)
+```
+## Step 7
+
+Set the starting position for the key
+``||sprites:setPosition(20, 60)||``
+```blocks
+key.setPosition(20, 60)
+```
+## Step 8
+
+Create a sprite called advice and set it as a projectile
+``||sprites:create(assets.image`advice`, SpriteKind.Projectile)||``
+```blocks
+let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
+```
+## Step 9
+
+Set the starting position for the door
+``||sprites:setPosition(150, 60)||``
+```blocks
+door.setPosition(150, 60)
+```
+## Step 10
+
+Create obstacles
+``||sprites:create simple obstacle sprites||``
+```blocks
+let obstacle = sprites.create(assets.image`obstacle`, SpriteKind.Enemy)
+```
+## Step 11
+
+Detect when the player collects the key
+``||sprites:onOverlap(SpriteKind.Player, SpriteKind.Food)||``
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (p, k) {
-    k.destroy()
     hasKey = true
+    k.destroy()
     game.splash("You got the key!")
-    hasKey = false
-    key = sprites.create(assets.image`key`, SpriteKind.Food)
-    key.setPosition(Math.randomRange(10, 150), Math.randomRange(10, 110))
 })
 ```
+## Step 12
 
-## Step 2
+Detect when the player touches the door
+``||sprites:onOverlap(SpriteKind.Player, SpriteKind.Projectile)||``
 ```blocks
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (p, d) {
     if (hasKey) {
@@ -25,73 +93,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (p, d) {
     }
 })
 ```
-## Step 3
-```blocks
-let hasKey = false
-```
-## Step 4
-```blocks
-let key = Sprite = sprites.create(assets.image`key`, SpriteKind.Player)
-```
-## Step 5
-```blocks
-(uses sprites, simple obstacles)
-```
-## Step 6
-```blocks
-scene.setBackgroundColor(7)
-```
-## Step 7
-```blocks
-let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
-```
-## Step 8
-```blocks
-controller.moveSprite(player3)
-```
-## Step 9
-```blocks
-player3.setFlag(SpriteFlag.StayInScreen, true)
-```
-## Step 10
-```blocks
-let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
-```
-## Step 11
-```blocks
-door.setPosition(150, 60)
-```
-## Step 12
-```blocks
-key = sprites.create(assets.image`key`, SpriteKind.Food)
-````
-## Step 13
-```blocks
-key.setPosition(20, 60)
-```
 
 
 
-> Open this page at [https://linuxloser137.github.io/find-the-key-maze--b3/](https://linuxloser137.github.io/find-the-key-maze--b3/)
-
-## Use as Extension
-
-This repository can be added as an **extension** in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **New Project**
-* click on **Extensions** under the gearwheel menu
-* search for **https://github.com/linuxloser137/find-the-key-maze--b3** and import
-
-## Edit this project
-
-To edit this repository in MakeCode.
-
-* open [https://arcade.makecode.com/](https://arcade.makecode.com/)
-* click on **Import** then click on **Import URL**
-* paste **https://github.com/linuxloser137/find-the-key-maze--b3** and click import
-
-#### Metadata (used for search, rendering)
-
-* for PXT/arcade
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
