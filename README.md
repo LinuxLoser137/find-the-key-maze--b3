@@ -10,6 +10,7 @@ let hasKey = false
 Set the background color
 ``||scene:setBackgroundColor(7)||``
 ```blocks
+let hasKey = false
 scene.setBackgroundColor(7)
 ```
 ## Step 3
@@ -17,6 +18,8 @@ scene.setBackgroundColor(7)
 Create a sprite and name it finder
 ``||sprites:create(assets.image`finder`, SpriteKind.Player)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
 let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
 ```
 ## Step 4
@@ -24,6 +27,9 @@ let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
 Create movement for the sprite
 ``||controller:moveSprite(player3)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
 controller.moveSprite(player3)
 ```
 ## Step 5
@@ -67,6 +73,13 @@ key.setPosition(20, 60)
 Create a sprite called advice and set it as a projectile
 ``||sprites:create(assets.image`advice`, SpriteKind.Projectile)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
+let key = sprites.create(assets.image`key`, SpriteKind.Food)
+key.setPosition(20, 60)
 let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
 ```
 ## Step 9
@@ -74,6 +87,14 @@ let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
 Set the starting position for the door
 ``||sprites:setPosition(150, 60)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
+let key = sprites.create(assets.image`key`, SpriteKind.Food)
+key.setPosition(20, 60)
+let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
 door.setPosition(150, 60)
 ```
 ## Step 10
@@ -81,6 +102,15 @@ door.setPosition(150, 60)
 Create obstacles
 ``||sprites:create simple obstacle sprites||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
+let key = sprites.create(assets.image`key`, SpriteKind.Food)
+key.setPosition(20, 60)
+let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
+door.setPosition(150, 60)
 let obstacle = sprites.create(assets.image`obstacle`, SpriteKind.Enemy)
 ```
 ## Step 11
