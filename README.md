@@ -31,13 +31,22 @@ controller.moveSprite(player3)
 Keep the player on the screen
 ``||sprites:setFlag(SpriteFlag.StayInScreen, true)||``
 ```blocks
-player3.setFlag(SpriteFlag.StayInScreen, true)
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
 ```
 ## Step 6
 
 Create a sprite called key
 ``||sprites:create(assets.image`key`, SpriteKind.Food)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
 let key = sprites.create(assets.image`key`, SpriteKind.Food)
 ```
 ## Step 7
@@ -45,6 +54,12 @@ let key = sprites.create(assets.image`key`, SpriteKind.Food)
 Set the starting position for the key
 ``||sprites:setPosition(20, 60)||``
 ```blocks
+let hasKey = false
+scene.setBackgroundColor(7)
+let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
+controller.moveSprite(player3)
+player3.setStayInScreen(true)
+let key = sprites.create(assets.image`key`, SpriteKind.Food)
 key.setPosition(20, 60)
 ```
 ## Step 8
