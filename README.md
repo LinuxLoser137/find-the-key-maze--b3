@@ -1,3 +1,8 @@
+# Find the Key Maze
+
+## Introduction @unplugged
+This is a game for beginners 
+
 ## Step 1
 
 Create a variable to track if the player has the key
