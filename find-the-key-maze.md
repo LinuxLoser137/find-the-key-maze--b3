@@ -1,75 +1,75 @@
 
-Step 1
+## Step 1
 
 Create a variable to track if the player has the key
 ``||variables:set hasKey to false||``
 ```blocks
 let hasKey = false
 ```
-Step 2
+## Step 2
 
 Set the background color
 ``||scene:setBackgroundColor(7)||``
 ```blocks
 scene.setBackgroundColor(7)
 ```
-Step 3
+## Step 3
 
 Create a sprite and name it finder
 ``||sprites:create(assets.image`finder`, SpriteKind.Player)||``
 ```blocks
 let player3 = sprites.create(assets.image`finder`, SpriteKind.Player)
 ```
-Step 4
+## Step 4
 
 Create movement for the sprite
 ``||controller:moveSprite(player3)||``
 ```blocks
 controller.moveSprite(player3)
 ```
-Step 5
+## Step 5
 
 Keep the player on the screen
 ``||sprites:setFlag(SpriteFlag.StayInScreen, true)||``
 ```blocks
 player3.setFlag(SpriteFlag.StayInScreen, true)
 ```
-Step 6
+## Step 6
 
 Create a sprite called key
 ``||sprites:create(assets.image`key`, SpriteKind.Food)||``
 ```blocks
 let key = sprites.create(assets.image`key`, SpriteKind.Food)
 ```
-Step 7
+## Step 7
 
 Set the starting position for the key
 ``||sprites:setPosition(20, 60)||``
 ```blocks
 key.setPosition(20, 60)
 ```
-Step 8
+## Step 8
 
 Create a sprite called advice and set it as a projectile
 ``||sprites:create(assets.image`advice`, SpriteKind.Projectile)||``
 ```blocks
 let door = sprites.create(assets.image`advice`, SpriteKind.Projectile)
 ```
-Step 9
+## Step 9
 
 Set the starting position for the door
 ``||sprites:setPosition(150, 60)||``
 ```blocks
 door.setPosition(150, 60)
 ```
-Step 10
+## Step 10
 
 Create obstacles
 ``||sprites:create simple obstacle sprites||``
 ```blocks
-(uses sprites, simple obstacles)
+let obstacle = sprites.create(assets.image`obstacle`, SpriteKind.Enemy)
 ```
-Step 11
+## Step 11
 
 Detect when the player collects the key
 ``||sprites:onOverlap(SpriteKind.Player, SpriteKind.Food)||``
@@ -80,7 +80,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (p, k) {
     game.splash("You got the key!")
 })
 ```
-Step 12
+## Step 12
 
 Detect when the player touches the door
 ``||sprites:onOverlap(SpriteKind.Player, SpriteKind.Projectile)||``
